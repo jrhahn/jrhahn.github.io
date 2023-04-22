@@ -1,32 +1,37 @@
 {% if site.show_projects %}
-  {% for project in site.data.projects %}
-  <div class="projects-wrapper" >
-    <div style="display:inline-block;float:left;">
-      <div>
-        {% if project.title_image %}
-          <img src="{{ project.title_image }}" alt="{{ project.title_image }}" width="100px">
-        {% endif %}
-   
-        <div style="display:inline-block;">
-          <h1 class="title" style="text-align:left;"><span>&nbsp;&nbsp;&nbsp;&nbsp;{{project.title}}</span></h1>
-        </div>   
-      </div>
+{% for project in site.data.projects %}
+<div class="projects-wrapper">
+  <div style="display:inline-block;float:left;">
+    <div>
+      {% if project.title_image %}
+      <img src="{{ project.title_image }}" alt="{{ project.title_image }}" width="100px">
+      {% endif %}
 
-      <div class="project neumorphism-card" data-aos="zoom-in-down">
-        <p class="project-desc">{{project.descr}}</p>
-        {% if project.url %}
-          <a class="highlight-link" href="{{project.url}}" target="_blank" rel="noreferrer">Coming soon!</a>
-        {% endif %}
+      <div style="display:inline-block;">
+        <h1 class="title" style="text-align:left;"><span>&nbsp;&nbsp;&nbsp;&nbsp;{{project.title}}</span></h1>
       </div>
-    </div>  
-    {% if project.images %}
-      <div class="project neumorphism-card" data-aos="zoom-in-down" style="display:inline-block;float:right;">
-        {% for img in project.images %}
-          <img src="{{img}}" alt="{{img}}" width="150px" style="padding: 20px; float: right;">
-        {% endfor %}
-      </div>
-    {% endif %}
+    </div>
+
+    <div class="project neumorphism-card" data-aos="zoom-in-down">
+      <p class="project-desc">{{project.descr}}</p>
+      {% if project.url %}
+      <a class="highlight-link" href="{{project.url}}" target="_blank" rel="noreferrer">Now available in the app
+        store!</a>
+      {% endif %}
+    </div>
   </div>
-  {% endfor %}
+  {% if project.images %}
+  <div class="project neumorphism-card" data-aos="zoom-in-down" style="display:inline-block;float:right;">
+    {% for img in project.images %}
+    <img src="{{img}}" alt="{{img}}" width="150px" style="padding: 20px; float: right;">
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+{% endfor %}
 {% endif %}
 
+<div style="display:inline-block;float:left;">
+  <a href="imprint.html">Imprint</a>
+  <br />
+</div>
